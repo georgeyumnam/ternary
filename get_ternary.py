@@ -18,7 +18,7 @@ def ternary_system():
         return sorted(["{}-{}".format(*sorted(triad))
                     for triad in itertools.product(first_el, second_el, third_el)])
     
-mpr = MPRester("KTlxQGR0PshFBAS4")
+mpr = MPRester("MAPI_KEY")
 docs = mpr.query({'chemsys': {'$in': ternary_system()}}, ['material_id', 'pretty_formula','cif'])
 
 with ZipFile('ternay_cifs.zip', 'w') as f:
